@@ -18,7 +18,6 @@ while (again == true) {
 		if (guess == "q"){
 			alert("You quit.");
 			break;
-      break;
 		}
 		if (validate(guess) == true){
 			turns++;
@@ -37,6 +36,9 @@ while (again == true) {
 		}
 		else alert("Invalid guess, try again.");
 	}
+	if (guess == "q"){
+			break;
+		}
 }
 // game is over
 
