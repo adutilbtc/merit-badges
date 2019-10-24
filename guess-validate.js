@@ -12,7 +12,7 @@ while (again == true) {
 	var turns = 0;
 	var guess = 0;
 	var answer = Math.floor(Math.random()*100)+1;
-	 console.log(answer);
+	// console.log(answer);
 	while (guess != answer){
 		guess = prompt("Guess my number (1-100).");
 		if (guess == "q"){
