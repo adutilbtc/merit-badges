@@ -40,7 +40,7 @@ while (again == true) {
 			break;
 		}
 }
-// game is over
+
 
 /* Function validate
  * Ensures guess is a valid integer within answer range
