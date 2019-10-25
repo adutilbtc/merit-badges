@@ -2,12 +2,12 @@
 var games=0;
 var again=true;
 var totalTurns=0;
-while(playAgain==true){
+while(again==true){
 	games++;
 	var turns = 0;
 	var guess = 0;
 	var answer = Math.floor(Math.random()*100)+1;
- console.log(answer);
+	console.log(answer);
 	while (guess != answer){
 		guess = prompt("Guess my number (1-100).");
 		if (guess == "q"){
@@ -22,6 +22,9 @@ while(playAgain==true){
 			else if (guess > answer){
 				alert("Too high!");
 			}
+			else if(guess==answer){
+				gameStats(turns);
+				playAgain();
 		}
 		else alert("Invalid guess, try again.");
 	}
@@ -44,9 +47,6 @@ function validate(guess){
 	else {
 		return false;
 	}
-	if (guess==answer){
-		(gameStats(turns));
-}
 /*function gameStats
 *gives curent stats
 *@param turns, totalTurns
@@ -63,11 +63,12 @@ function gameStats(turns){
 *@param again
 *@return boolean
 */
-function playAgain(again){
+function playAgain(){
 	 again=prompt("playing again? y for yes");
 	if(again=="y"){
 		return true;
 	}else{
 			alert("goodbye");
+			return false;
 		}
 }
