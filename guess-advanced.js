@@ -28,12 +28,12 @@ while(again==true){
 		}
 		else alert("Invalid guess, try again.");
 	}
-	if (guess=="q"){
-		alert("quitting");
-		break;
+		if (guess=="q"){
+			alert("quitting");
+			break;
+		}
 	}
 }
-
 
 /* Function validate
  * Ensures guess is a valid integer within answer range
@@ -47,6 +47,7 @@ function validate(guess){
 	else {
 		return false;
 	}
+}
 /*function gameStats
 *gives curent stats
 *@param turns, totalTurns
