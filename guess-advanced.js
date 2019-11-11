@@ -56,7 +56,7 @@ function validate(guess){
 function gameStats(turns){
 	var averageTurns=totalTurns/games;
 	alert("You guessed my number in "+turns+" turns.");
-	totalTurns+=totalTurns;
+	totalTurns=totalTurns+turns;
 	alert("you won "+games+"with an average of "+averageTurns+" turns per game"); 
 }
 /*function playAgain(again)
