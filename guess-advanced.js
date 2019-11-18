@@ -24,7 +24,7 @@ while(again==true){
 			}
 			else if(guess==answer){
 				gameStats(turns,totalTurns);
-				playAgain();
+				again=playAgain();
 		}
 		else alert("Invalid guess, try again.");
 	}
