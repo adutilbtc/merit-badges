@@ -23,7 +23,7 @@ while(again==true){
 				alert("Too high!");
 			}
 			else if(guess==answer){
-				gameStats(turns);
+				gameStats(turns,totalTurns);
 				playAgain();
 		}
 		else alert("Invalid guess, try again.");
@@ -53,11 +53,11 @@ function validate(guess){
 *@param turns, totalTurns
 *@return none
 */
-function gameStats(turns){
+function gameStats(turns,totalTurns){
+	totalTurns=totalTurns+turns;
 	var averageTurns=totalTurns/games;
 	alert("You guessed my number in "+turns+" turns.");
-	totalTurns=totalTurns+turns;
-	alert("you won "+games+"with an average of "+averageTurns+" turns per game"); 
+	alert("you won "+games+" with an average of "+averageTurns+" turns per game"); 
 }
 /*function playAgain(again)
 *checks for play again
@@ -71,5 +71,6 @@ function playAgain(){
 	}else{
 			alert("goodbye");
 			return false;
+			
 		}
 }
