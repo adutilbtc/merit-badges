@@ -37,7 +37,7 @@ function userTurn(count){
 		alert("invalid input, cheater");
 	}
 	else{
-		count+=userInput;
+		count+=Number(userInput);
 		alert("current count is "+count);
 		return count;
 	}
@@ -46,7 +46,6 @@ function userTurn(count){
 
 
 function nextSwitch(next){
-	alert("working");
 	if(next==0){
 		return 1;
 	}
@@ -77,6 +76,7 @@ function playAgain(again){
 	}
 	else{
 		alert("goodbye");
+		return ;
 	}
 	
 }
