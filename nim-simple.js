@@ -18,7 +18,7 @@ while(again==true){
 		next=nextSwitch(next);
 	}
 	declareWinner(next);
-	playAgain(again);
+	again=playAgain(again);
 }	
 function cpuTurn(count){
 	var cpuInput=Math.floor(Math.random()*3)+1;
@@ -57,11 +57,11 @@ function nextSwitch(next){
 
 
 function declareWinner(next){
-	if(next==0){
+	if(next==1){
 		alert("you win");
 		games++;
 	}
-	else if (next==1){
+	else if (next==0){
 		alert("cpu wins");
 		games++;
 	}
@@ -72,11 +72,12 @@ function declareWinner(next){
 function playAgain(again){
 	again=prompt("playing again? y for yes");
 	if(again=="y"){
-		return true;
+		again= true;
+		
 	}
 	else{
 		alert("goodbye");
-		return ;
+		again= false ;
 	}
-	
+	return again;
 }
