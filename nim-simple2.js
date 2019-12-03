@@ -31,14 +31,19 @@ function cpuTurn(count){
 }
 function userTurn(count){
 	var userInput=prompt("enter number 1-3");
-	if(userInput!="1"&&userInput!="2"&&userInput!="3"){
-		alert("invalid input, cheater");
-	}
-	else{
-		count+=Number(userInput);
-		
-		return count;
-	}
+	while(userInput!="1"&&userInput!="2"&&userInput!="3"){
+		if(userInput!="1"&&userInput!="2"&&userInput!="3"){
+			alert("invalid input, cheater");
+			userInput=prompt("enter 1-3");
+		}
+	
+		else{
+			
+		}
+	}	
+	count+=Number(userInput);
+			return count;
+	
 }
 
 
@@ -79,4 +84,3 @@ function playAgain(again){
 	}
 	return again;
 }
-
