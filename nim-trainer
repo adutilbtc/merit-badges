@@ -1,4 +1,5 @@
 /*nim simple by Andrew*/
+//provide player chance to choose between nim simple or trainer
 var games=0;
 var again=true;
 while(again==true){
@@ -84,3 +85,13 @@ function playAgain(again){
 	}
 	return again;
 }
+/*function nimTrainer
+*param count
+*return count
+*/
+//calculate cpu turn when count is not a multiple of four using %
+//otherwise if the count is 20 cpu should count 1
+//otherwise cpu should give a random number 1-3
+//alert what cpu counts
+//add turn to count
+//return count
