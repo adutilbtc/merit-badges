@@ -4,7 +4,7 @@ var games=0;
 var again=true;
 while(again==true){
 	alert("welcome to nim");
-	var gameType=prompt("simple or trainer?");
+	var gameType=prompt("[s]imple or [t]rainer?");
 	var count=0;
 	var turns=0;
 	var next=games%2;
