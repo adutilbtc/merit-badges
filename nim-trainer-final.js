@@ -13,7 +13,7 @@ alert("Let\'s play Nim!");
 while (again == true) {
 	count=0;
 	turn=0;
-	gameType=prompt("[t]rainer or [s]imple?");
+	pickGame(gameType);
 	next=games%2;
 	while (count < 21){
 		if (next == 0) {
