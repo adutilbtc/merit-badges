@@ -1,6 +1,6 @@
 
 /* 
- * Nim Simple - Mr. M.'s Version 
+ * Nim Simple - Andrew's Version 
  * Note: Global variables have been passed as parameters.  This is not best practice, but helpful for tracking.
  */
 
@@ -13,11 +13,16 @@ alert("Let\'s play Nim!");
 while (again == true) {
 	count=0;
 	turn=0;
-	pickGame(gameType);
+	gameType=pickGame();
 	next=games%2;
 	while (count < 21){
 		if (next == 0) {
-			count = cpuTurn(count);
+			if(gameType=="s"){
+				count = cpuTurn(count);
+			}
+		else if(gameType=="t"){
+			count = cpuTrainer(count);
+		}
 			alert("Count is now "+count);
 		}
 		else {
@@ -74,7 +79,9 @@ function declareWinner(next){
 	again = confirm("Press OK to play, Cancel to quit.");
 	return again;
 }
+/*cpuTrainer: if the player activates this it teaches them the secret to a win*/
 function cpuTrainer(count){
+	alert("working");
 	if(count%4!=0) turn=4-(count%4);
 	else if (count==20) turn=1;
 	else turn=Math.floor(Math.random()*3)+1;
@@ -82,9 +89,8 @@ function cpuTrainer(count){
 	count+=turn;
 	return count;
 }
-function pickGame(gameType){
-	gameType=prompt("[t]rainer or [s]imple?");
-	if(gameType=="t") cpuTrainer(count);
-	else if(gameType=="s") cpuTurn(count);
+/*pickGame: allows players to choose between simple or trainer*/
+function pickGame(){
+	var gameType=prompt("[t]rainer or [s]imple?");
 	return gameType;
 }
