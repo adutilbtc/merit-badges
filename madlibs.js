@@ -15,9 +15,10 @@ main();
  * @return none
  */
 function main(){
-	var sentenceString, sentence=[], toReplace, replaceIndex, replacement, replacements=[], newSentence;
+	var sentenceString, sentence=[], toReplace, replaceIndex, replacement, replacements=[], newSentence, again=false;
 	authorSetup();
 	playerPopulate();
+	again=displayResult();
 	if(again==true){
 		main();
 	}
@@ -39,15 +40,15 @@ function main(){
    * @return none
    */  
 function authorSetup(){
-	sentence=prompt("input a sentence for Mad Lib");
-	sentence=sentenceString.split(" ");
+	sentenceString=prompt("input a sentence for Mad Lib");
+	 sentence=sentenceString.split(" ");
 	toReplace=prompt("how many words are being replaced?");
 	for (var i=0; i<toReplace; i++){
 		replaceIndex=prompt("replace which word in sentence?");
 		replaceIndex--;
 		replacements[i]=replaceIndex;
 		var partOfSpeech=prompt(" what part of speech is " +sentence[replaceIndex]);
-		sentence[i]=partOfSpeech;
+		sentence[replaceIndex]=partOfSpeech;
 	}
 	alert("author go get player");
 }
@@ -59,9 +60,9 @@ function authorSetup(){
   function playerPopulate(){
 	  for(var i=0; i<toReplace; i++){
 		  replacement=prompt("enter a "+sentence[replacements[i]]);
-		  sentence=[replacements[i]]=replacement;
+		  sentence[replacements[i]]=replacement;
 	  }
-	  displayResult();
+	 
   }
 	
  /* Function displayResult
@@ -76,7 +77,7 @@ function authorSetup(){
 	 alert("player, go get author ");
 	 var ready=confirm( "click 'ok'to see new sentence");
 	 alert(sentence);
-	 let again=confirm("click ok to play again");
+	again=confirm("click ok to play again");
 	 return again;
  }
 // End Function Main
